@@ -1,0 +1,4 @@
+@function public_image_url($relative-path) {
+  @return url('<%= ENV["PUBLIC_IMAGE_URL"] %>/#{$relative-path}');
+}
+
