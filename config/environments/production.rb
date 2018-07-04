@@ -63,6 +63,9 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "quixter_#{Rails.env}"
 
+  # Mail
+
+  config.action_mailer.default_url_options = { host: 'https://quixter-ruby7sapphire.herokuapp.com' }
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.

@@ -71,3 +71,4 @@ end
 
 gem 'figaro'
 gem 'simple_form'
+gem 'devise'
