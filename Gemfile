@@ -70,3 +70,4 @@ source 'https://rails-assets.org' do
 end
 
 gem 'figaro'
+gem 'simple_form'
