@@ -12,7 +12,7 @@
  *
  */
 
-@import 'custom';
+@import 'base/custom';
 @import 'bootstrap';
-@import 'master';
-@import 'static_pages';
+@import 'base/global';
+@import 'modules/*';
