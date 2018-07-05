@@ -1,18 +1,22 @@
-<div class="qx-index--hero">
-  <br />
-  <div class="qx-index--hero-text-outer">
+<% content_for :body_before_main_content do %>
+
+  <div class="qx-index--hero">
     <br />
-    <h1 class="qx-index--hero-text">Welcome to the Quixter app!</h1>
-    <br />
-    <h2 class="qx-index--hero-text">Learn how to code, quickly</h2>
-    <br />
-    <%= link_to 'Learn More', '#', class: 'btn btn-success' %>
-    <br /><br />
+    <div class="qx-index--hero-text-outer">
+      <br />
+      <h1 class="qx-index--hero-text">Welcome to the Quixter app!</h1>
+      <br />
+      <h2 class="qx-index--hero-text">Learn how to code, quickly</h2>
+      <br />
+      <%= link_to 'Learn More', '#', class: 'btn btn-success' %>
+      <br /><br />
+    </div>
   </div>
-</div>
+
+<% end %>
 
 <br />
-<div class="row feature text-center">
+<div class="row qx-index--feature text-center">
   <div class="col-12 col-sm">
     <h3>Amazing Courses</h3>
     <br />

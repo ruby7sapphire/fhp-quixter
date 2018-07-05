@@ -1,3 +1,34 @@
-// Place all the styles related to the static_pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+//
+// Index (Static Pages model)
+//
+
+.qx-index--hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 370px;
+  background: public_image_url('hero.jpg') center;
+  background-size: cover;
+  box-shadow: 0 0 10px black;
+  text-align: center;
+}
+
+.qx-index--hero-text-outer {
+  padding: .5rem 3rem;
+  background-color: hsla(0, 0%, 0%, .5);
+  box-shadow: 0 0 2px hsla(0, 0%, 0%, .5);
+  border-radius: $border-radius;
+}
+
+.qx-index--hero-text {
+  color: white;
+  text-shadow: 0 0 3px;
+  font-weight: 100;
+  font-family: $qx-sans-serif;
+}
+
+.qx-index--feature {
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+}

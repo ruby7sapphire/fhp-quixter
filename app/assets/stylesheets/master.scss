@@ -1,53 +1,161 @@
 
 body {
+  padding-bottom: $qx-standard-spacer * 2;
   background: image_url('funky-lines.png');
+  font-size: 1.1rem;
   font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
 }
 
-h1, h2, h3, h4, h5, h6, .navbar {
-  margin: 0;
+.h1, .h2, .h3, .h4, .h5, .h6,
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -.01em; // "em" for proportional scaling
+  font-family: $qx-sans-serif;
 }
 
-.navbar {
+img {
+  max-width: 100%;
+}
+
+a {
+  transition: .3s;
+}
+
+.btn {
+  white-space: normal;
+  font-size: 100%;
   font-family: $qx-sans-serif;
-  font-weight: 200;
-  box-shadow: 0px 1px 3px #2a2a2a;
+  cursor: pointer;
+}
+
+//===============*
+// Layout
+
+.qx-width-md {
+  max-width: 768px;
+}
+
+//---------------*
+// Sections
+
+.qx-section-plain, .qx-section-box {
+  margin: 0 auto $qx-standard-spacer;
+  padding: $qx-standard-spacer;
+}
+
+// Section box
+
+.qx-section-box {
+  overflow: hidden;
+  margin: 0 auto $qx-standard-spacer;
+  padding: $qx-standard-spacer;
+  background: white;
+  box-shadow:
+    0 0 7px hsla(0, 0%, 0%, 0.25),
+    0 0 2px hsla(0, 0%, 0%, 0.4) inset;
+}
+
+@include media-breakpoint-up(sm) {
+  .qx-section-box {
+    border: 1px solid hsl(0, 0%, 94%);
+    border-radius: $border-radius * 2;
+  }
+}
+
+//===============*
+// Navigation
+
+.navbar {
   background: image_url('triangles.png');
+  box-shadow: 0 0 7px black;
+  font-weight: 200;
+  font-family: $qx-sans-serif;
 }
 
 .navbar-inverse a.navbar-brand {
-  font-family: $qx-sans-serif;
-  font-weight: 100;
   color: white;
-}
-
-.qx-index--hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 370px;
-  background: public_image_url('hero.jpg') center;
-  background-size: cover;
-  box-shadow: 0 0 10px black;
-  text-align: center;
-}
-
-.qx-index--hero-text-outer {
-  padding: .5rem 3rem;
-  background-color: hsla(0, 0%, 0%, .5);
-  box-shadow: 0 0 2px hsla(0, 0%, 0%, .5);
-  border-radius: $border-radius;
-}
-
-.qx-index--hero-text {
-  color: white;
-  text-shadow: 0 0 3px;
-  font-weight: 100;
   font-family: $qx-sans-serif;
 }
 
-.feature {
-  width: 100%;
-  padding-left: 5%;
-  padding-right: 5%;
+//===============*
+// Main Content
+
+@include media-breakpoint-up(sm) {
+  .qx-main-content {
+    padding-top: $qx-standard-spacer;
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .qx-main-content {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+//===============*
+// Modules
+
+//---------------*
+// Forms, general
+
+form, input {
+  font-family: $qx-sans-serif;
+}
+
+abbr[title="required"] {
+  // Undo unnecessary decorations to the "required" asterisk
+	text-decoration: inherit;
+	cursor: inherit;
+}
+
+.form-actions {
+  margin-top: .5rem;
+}
+
+.form-control {
+	background-color: hsla(0, 0%, 100%, 0.3);
+}
+
+// Error messages
+
+.is-invalid {
+  border-color: $alert-danger-text;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.invalid-feedback {
+  color: $alert-danger-text;
+  border: 1px solid $alert-danger-border;
+  border-top-width: 0;
+  padding: .25rem 0.7rem;
+  background-color: $alert-danger-bg;
+}
+
+//---------------*
+// Alert
+
+.alert {
+  font-family: $qx-sans-serif;
+}
+
+//===============*
+// Devise authentication form
+
+.qx-devise-view {
+  max-width: 100%;
+  width: 24rem;
+
+  & > h2,
+  & .simple_form {
+    margin-top: 0.5rem;
+    margin-bottom: $qx-standard-spacer;
+  }
+}
+
+.qx-devise--shared-links {
+	display: flex;
+	flex-flow: wrap;
+	justify-content: space-between;
+  font-family: $qx-sans-serif;
 }
