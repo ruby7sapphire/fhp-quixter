@@ -11,40 +11,52 @@
 
   <body>
 
-    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#mainNavbarToggler" aria-controls="mainNavbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <%= link_to 'Quixter', root_path, class: 'navbar-brand' %>
+    <div class="qx-root--flex-content-container">
 
-      <div class="collapse navbar-collapse" id="mainNavbarToggler">
-        <ul class="navbar-nav ml-auto mt-2 mt-md-0">
-          <% if user_signed_in? %>
-            <li class="nav-item">
-              <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
-            </li>
-          <% else %>
-            <li class="nav-item">
-              <%= link_to 'Sign in', new_user_session_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
-            </li>
-          <% end %>
-        </ul>
+      <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#mainNavbarToggler" aria-controls="mainNavbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <%= link_to 'Quixter', root_path, class: 'navbar-brand' %>
+
+        <div class="collapse navbar-collapse" id="mainNavbarToggler">
+          <ul class="navbar-nav ml-auto mt-2 mt-md-0">
+            <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to 'Sign in', new_user_session_path, class: 'nav-link' %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
+
+      <% if notice.present? %>
+        <p class="alert alert-info text-center rounded-0"><%= notice %></p>
+      <% end %>
+      <% if alert.present? %>
+        <p class="alert alert-danger text-center rounded-0"><%= alert %></p>
+      <% end %>
+
+      <%= yield :body_before_main_content %>
+      <div class="qx-main-content container">
+        <%= yield %>
       </div>
-    </nav>
 
-    <% if notice.present? %>
-      <p class="alert alert-info text-center rounded-0"><%= notice %></p>
-    <% end %>
-    <% if alert.present? %>
-      <p class="alert alert-danger text-center rounded-0"><%= alert %></p>
-    <% end %>
+    </div>
 
-    <%= yield :body_before_main_content %>
-    <div class="qx-main-content container">
-      <%= yield %>
+    <div class="qx-root--flex-footer-container">
+      <div class="container">
+        <b>Footer Here</b>
+        <br />
+        <%= link_to 'Link', '#' %>
+      </div>
     </div>
 
   </body>
