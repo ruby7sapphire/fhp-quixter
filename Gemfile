@@ -72,3 +72,5 @@ end
 gem 'figaro'
 gem 'simple_form'
 gem 'devise'
+gem 'carrierwave'
+gem 'carrierwave-aws'
