@@ -30,3 +30,6 @@
 
 # Ignore public media (used to mirror cloud storage during development)
 /public/media
+
+# Ignore local CarrierWave uploads
+/public/uploads
