@@ -2,6 +2,10 @@ class Instructor::CoursesController < ApplicationController
   before_action :authenticate_user!
   before_action :require_authorized_for_current_course, only: [:show]
 
+  def index
+    redirect_to new_instructor_course_path
+  end
+
   def new
     @course = Course.new
   end
